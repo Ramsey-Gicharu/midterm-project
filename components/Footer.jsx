@@ -10,7 +10,7 @@ const Footer= () => {
       <div className={footerStyles.item}>
         <div className={footerStyles.card}>
           <h2 className={footerStyles.motto}>
-          Hungry, looking for somewhere to eat dont worry Campus Delight is here to help out so that u can maintain the energy needed to focus in class
+         Campus Delight Here to serve You
           </h2>
         </div>
         <div className={footerStyles.card}>

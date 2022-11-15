@@ -8,7 +8,7 @@ const Food = ()  => {
     id: 1,
     img: "/img/bbqsteakpizza.jpg",
     name: "BBq Steak Pizza",
-    price: [250],
+    price: 500,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.",
   };
 
@@ -21,7 +21,7 @@ const Food = ()  => {
       </div>
       <div className={foodStyles.right}>
         <h1 className={foodStyles.title}>{pizza.name}</h1>
-        <span className={foodStyles.price}>${pizza.price[size]}</span>
+        <span className={foodStyles.price}>Kshs{pizza.price}</span>
         <p className={foodStyles.desc}>{pizza.desc}</p>
         <div className={foodStyles.add}>
             <input type="number" defaultValue={1} className={foodStyles.quantity}/>
