@@ -5,7 +5,7 @@ exports.id = 795;
 exports.ids = [795];
 exports.modules = {
 
-/***/ 691:
+/***/ 881:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -16,6 +16,8 @@ __webpack_require__.d(__webpack_exports__, {
   "default": () => (/* binding */ handler)
 });
 
+;// CONCATENATED MODULE: external "next/dist/shared/lib/constants"
+const constants_namespaceObject = require("next/dist/shared/lib/constants");
 ;// CONCATENATED MODULE: external "mongoose"
 const external_mongoose_namespaceObject = require("mongoose");
 var external_mongoose_default = /*#__PURE__*/__webpack_require__.n(external_mongoose_namespaceObject);
@@ -78,15 +80,24 @@ const FoodSchema = new (external_mongoose_default()).Schema({
 ;// CONCATENATED MODULE: ./pages/api/foods/index.js
 
 
+
 async function handler(req, res) {
     const { method  } = req;
     mongo();
+    if (method === "GET") {
+        try {
+            const foods = await Food.find({}); // get all the foods
+            res.status(200).json(foods);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    }
     if (method === "POST") {
         try {
             const food = await Food.create(req.body);
             res.status(201).json(food);
-        } catch (err) {
-            res.status(500).json(err);
+        } catch (err1) {
+            res.status(500).json(err1);
         }
     }
 }
@@ -101,7 +112,7 @@ async function handler(req, res) {
 var __webpack_require__ = require("../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(691));
+var __webpack_exports__ = (__webpack_exec__(881));
 module.exports = __webpack_exports__;
 
 })();

@@ -23,9 +23,9 @@ export default function Home({menuItem}) {
   )
 }
 
-export const getServerSideProps = async (ctx) => {
+export const getServerSideProps = async () => {
 
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get("http://localhost:3000/api/foods");
   return {
     props: {
       menuItem: res.data,
